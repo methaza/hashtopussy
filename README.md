@@ -61,3 +61,8 @@ Some screenshots of Hashtopussy (by winxp5421 and s3in!c): [Imgur1](http://imgur
 * atom for [hashcat](https://github.com/hashcat/hashcat)
 * curlyboi for the original [Hashtopus](https://github.com/curlyboi/hashtopus) code
 * 7zip binaries are compiled from https://sourceforge.net/projects/sevenzip/files/7-Zip/16.04/
+
+## CommunityCracking
+
+These changes were made for CommunityCracking. We have released the source following the GPL3 license included in this repository. We suggest that if you are developing your own system, use the source code of the main repository: https://github.com/s3inlc/hashtopussy
+You are free to use our code as a basis for your own modifications if you wish, though we assume no responsability with how it will work with your system.
