@@ -213,7 +213,7 @@ class API {
     $chunkSize = $size * $tolerance;
     if ($chunkSize <= 0) {
       $chunkSize = 1;
-      Util::createLogEntry("API", $QUERY[PQuery::TOKEN], DLogEntry::WARN, "Caluclated chunk size was 0 on benchmark $benchmark!");
+      Util::createLogEntry("API", $QUERY[PQuery::TOKEN], DLogEntry::WARN, "Calculated chunk size was 0 on benchmark $benchmark!");
     }
     
     return $chunkSize;
@@ -786,7 +786,7 @@ class API {
         if ($hl->getSecret() > $agent->getIsTrusted()) {
           continue;
         }
-        else if($format == DHashlistFormat::SUPERHASHLIST){
+        else if ($format == DHashlistFormat::SUPERHASHLIST) {
           // if we don't know the format yet, load it
           $format = $FACTORIES::getHashlistFactory()->get($list->getHashlistId())->getFormat();
         }
@@ -950,8 +950,8 @@ class API {
     $jF = new JoinFilter($FACTORIES::getFileFactory(), File::FILE_ID, TaskFile::FILE_ID);
     $joinedFiles = $FACTORIES::getTaskFileFactory()->filter(array($FACTORIES::JOIN => $jF, $FACTORIES::FILTER => $qF));
     $files = array();
-    for ($x = 0; $x < sizeof($joinedFiles['File']); $x++) {
-      $files[] = \DBA\Util::cast($joinedFiles['File'][$x], \DBA\File::class)->getFilename();
+    for ($x = 0; $x < sizeof($joinedFiles[$FACTORIES::getFileFactory()->getModelName()]); $x++) {
+      $files[] = \DBA\Util::cast($joinedFiles[$FACTORIES::getFileFactory()->getModelName()][$x], \DBA\File::class)->getFilename();
     }
     
     $hashlist = $FACTORIES::getHashlistFactory()->get($setToTask->getHashlistId());
